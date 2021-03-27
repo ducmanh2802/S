@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class ArrayListExcercise {
+public class Bai1ArrayList {
     public static void main(String[] args) throws Exception {
         /*
          * Hãy viết một ứng dụng dạng Console nhập từ bàn phím cho đến khi người dùng gõ
