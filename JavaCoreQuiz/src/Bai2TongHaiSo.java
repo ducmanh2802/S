@@ -35,13 +35,17 @@ public class Bai2TongHaiSo {
     public void display(){
         System.out.println("Mảng các phần tử:");
         for (int i = 0; i < arr.size(); i++) {
-            System.out.println(arr.get(i));
+            System.out.print(arr.get(i) + " ");
         }
     }
 
     public void tongGanNhat() {
-        System.out.println("Nhập vào X trong khoảng tử -10 đến 10");
+        System.out.println("\nNhập vào X trong khoảng tử -10 đến 10");
         int x = sc.nextInt();
+        while(x<-10 || x>10){
+            System.out.println("X là giá trị trong khỏa -10 đến 10, vui lòng nhập lại!");
+            x = sc.nextInt();
+        }
         int minSum = Math.abs(arr.get(0) + arr.get(1) - x);
         for (int i = 0; i < arr.size(); i++) {
             for (int j = i + 1; j < arr.size(); j++) {
