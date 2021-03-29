@@ -53,11 +53,20 @@ public class Bai2TongHaiSo {
         System.out.println("\nNhập vào X trong khoảng tử -10 đến 10");
         int x = sc.nextInt();
         while (x < -10 || x > 10) {
-            System.out.println("X là giá trị trong khỏa -10 đến 10, vui lòng nhập lại!");
+            System.out.println("X là giá trị trong khỏang -10 đến 10, vui lòng nhập lại!");
             x = sc.nextInt();
         }
-        int minSum = Math.abs(arr.get(0) + arr.get(1) - x);
+        int minSum = 20;// Gán 1 giá trị mặc định
 
+        //Chạy vòng lặp tìm ra 2 phần tử có tổng khác x đầu tiên(do ko tính giá trị tông bằng x)
+        for (int i = 0; i < arr.size(); i++) {
+            if (Math.abs(arr.get(i) + arr.get(i+1) - x) != 0) {
+                minSum = Math.abs(arr.get(i) + arr.get(i+1) - x);
+                break;
+            }
+        }
+
+        //vòng lặp tìm tổng gần nhất
         for (int i = 0; i < arr.size(); i++) {
             for (int j = i + 1; j < arr.size(); j++) {
                 if ((Math.abs(arr.get(i) + arr.get(j) - x)) < minSum && (Math.abs(arr.get(i) + arr.get(j) - x) != 0)) {
@@ -65,6 +74,8 @@ public class Bai2TongHaiSo {
                 }
             }
         }
+
+        //hiển thị
         for (int i = 0; i < arr.size(); i++) {
             for (int j = i + 1; j < arr.size(); j++) {
                 if ((Math.abs(arr.get(i) + arr.get(j) - x)) == minSum) {
