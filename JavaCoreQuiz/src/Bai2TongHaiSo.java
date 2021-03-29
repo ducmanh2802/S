@@ -56,7 +56,7 @@ public class Bai2TongHaiSo {
             System.out.println("X là giá trị trong khỏang -10 đến 10, vui lòng nhập lại!");
             x = sc.nextInt();
         }
-        int minSum = 100;// Gán 1 giá trị mặc định
+        int minSum = 100;// Gán 1 giá trị bất kỳ đủ lớn tí thay sau :))
 
 //
         //vòng lặp tìm tổng gần nhất
