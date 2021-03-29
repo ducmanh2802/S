@@ -58,14 +58,12 @@ public class Bai2TongHaiSo {
         }
         int minSum = 100;// Gán 1 giá trị mặc định
 
-//        
+//
         //vòng lặp tìm tổng gần nhất
         for (int i = 0; i < arr.size(); i++) {
             for (int j = i + 1; j < arr.size(); j++) {
                 if ((Math.abs(arr.get(i) + arr.get(j) - x)) < minSum && (Math.abs(arr.get(i) + arr.get(j) - x) != 0)) {
                     minSum = Math.abs(arr.get(i) + arr.get(j) - x);
-                    System.out.println("minSum: "+minSum);
-
                 }
             }
         }
