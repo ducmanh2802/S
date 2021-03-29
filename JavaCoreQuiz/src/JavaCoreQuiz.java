@@ -1,17 +1,17 @@
-import java.util.*;
+import java.util.Scanner;
 
 class JavaCore {
     public static void main(String[] args) {
         // 1.Hãy nói ra sự khác biệt giữa JDK và JRE?
         /*
          * JRE (môi trường thời gian chạy Java):
-         * 
+         *
          * Đây là một triển khai của Máy ảo Java * thực sự thực thi các chương trình
          * Java. Môi trường chạy thi hành Java là một trình cắm thêm cần thiết để chạy
          * các chương trình java. JRE nhỏ hơn JDK nên cần ít không gian đĩa hơn. Nó bao
          * gồm các thư viện JVM, Core và các thành phần bổ sung khác để chạy các ứng
          * dụng và tiểu dụng được viết bằng Java. JDK (Bộ phát triển Java)
-         * 
+         *
          * Nó là một gói phần mềm mà bạn có thể sử dụng để phát triển các ứng dụng dựa
          * trên Java. Bộ phát triển Java là cần thiết để phát triển các ứng dụng java.
          * JDK cần nhiều không gian đĩa hơn vì nó chứa JRE cùng với các công cụ phát
@@ -41,7 +41,11 @@ class JavaCore {
         // 5.Cho một mảng các số tự nhiên [1, 2, 0, 8, 5, 3, 9, 7] hãy viết hàm để dồn
         // tất cả số lẻ sang bên trái, số chẵn sang bên phải
         Scanner sc = new Scanner(System.in);
-        int[] arr = { 1, 2, 0, 8, 5, 3, 9, 7 };
+        int[] arr = {1, 2, 0, 8, 5, 3, 9, 7};
+        System.out.print("Dãy số trước khi sắp xếp chẵn lẻ: ");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] % 2 == 0) {
                 for (int j = arr.length - 1; j >= 0; j--) {
@@ -54,6 +58,7 @@ class JavaCore {
             }
 
         }
+        System.out.print("\nDãy số sau khi sắp xếp chẵn lẻ: ");
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
@@ -62,11 +67,11 @@ class JavaCore {
          * viết hàm lấy chữ số ở chính giữa, cộng với số bên trái, rồi nhân với số bên
          * phải, tiếp tục cho đến hết dãy số. "123" -> (2 + 1) * 3 "32567" -> ((5 + 2) *
          * 6 + 3) * 7
-         * 
+         *
          */
 
         try {
-            System.out.println("Nhập vào dãy số: ");
+            System.out.println("\nNhập vào dãy số: ");
             String input = sc.next();
             int n = Integer.parseInt(input);
             String[] inputs = input.split("");
@@ -89,12 +94,12 @@ class JavaCore {
         sc.close();
 
         /*
-         * 7. Lỗi barcode có thể do các nguyên nhân: 
-         * - Do mạng chập chờn, ko tải hết nội dung hình ảnh 
-         * - Do trình duyệt lỗi plugin về hiển thị hình ảnh 
-         * Các bước để khảo sát lỗi: 
-         * 1. Tải lại trang web -> nếu hình ảnh hiển thị bình thường thì ko do kết nối mạng 
-         * 2. Cài đặt hoặc update phiên bản mới nhất trình duyệt -> nếu hình ảnh hiển thị bình thường thì ko do trình duyệt 
+         * 7. Lỗi barcode có thể do các nguyên nhân:
+         * - Do mạng chập chờn, ko tải hết nội dung hình ảnh
+         * - Do trình duyệt lỗi plugin về hiển thị hình ảnh
+         * Các bước để khảo sát lỗi:
+         * 1. Tải lại trang web -> nếu hình ảnh hiển thị bình thường thì ko do kết nối mạng
+         * 2. Cài đặt hoặc update phiên bản mới nhất trình duyệt -> nếu hình ảnh hiển thị bình thường thì ko do trình duyệt
          * 3. Nhờ bên CGV gửi lại email khác với nội dung tương tự để kiểm tra lại
          */
     }
