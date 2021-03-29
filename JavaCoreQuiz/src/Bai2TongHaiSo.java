@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Bai2TongHaiSo {
     /*
@@ -7,7 +8,7 @@ public class Bai2TongHaiSo {
      * nhiên ngẫu nhiên có giá trị từ -10 đến 10 In các phần tử mảng ra màn hình
      * Nhập vào một số X trong khoảng từ -10 đến 10 Hãy liệt kê tất cả các cặp 2 số
      * trong mảng có tổng gần với số X nhất. Hướng dẫn các làm bài này:
-     * 
+     *
      * Hãy viết thành các phương thức, mỗi phương thức chỉ tập trung làm một việc,
      * tham số hoá chứ không nên dùng biến toàn cục. Quy tắc Clean Code Có thể tạo
      * sẵn một mảng khoảng 10 phần tử để kiểm tra khi chạy cho dễ dàng.
@@ -15,6 +16,14 @@ public class Bai2TongHaiSo {
     ArrayList<Integer> arr = new ArrayList<>();
 
     Scanner sc = new Scanner(System.in);
+
+    public static void main(String[] args) throws Exception {
+
+        Bai2TongHaiSo t = new Bai2TongHaiSo();
+        t.input();
+        t.display();
+        t.tongGanNhat();
+    }
 
     public void input() {
         try {
@@ -32,7 +41,8 @@ public class Bai2TongHaiSo {
             System.out.println("Giá trị nhập vào không hợp lệ!");
         }
     }
-    public void display(){
+
+    public void display() {
         System.out.println("Mảng các phần tử:");
         for (int i = 0; i < arr.size(); i++) {
             System.out.print(arr.get(i) + " ");
@@ -42,11 +52,12 @@ public class Bai2TongHaiSo {
     public void tongGanNhat() {
         System.out.println("\nNhập vào X trong khoảng tử -10 đến 10");
         int x = sc.nextInt();
-        while(x<-10 || x>10){
+        while (x < -10 || x > 10) {
             System.out.println("X là giá trị trong khỏa -10 đến 10, vui lòng nhập lại!");
             x = sc.nextInt();
         }
         int minSum = Math.abs(arr.get(0) + arr.get(1) - x);
+
         for (int i = 0; i < arr.size(); i++) {
             for (int j = i + 1; j < arr.size(); j++) {
                 if ((Math.abs(arr.get(i) + arr.get(j) - x)) < minSum && (Math.abs(arr.get(i) + arr.get(j) - x) != 0)) {
@@ -63,13 +74,5 @@ public class Bai2TongHaiSo {
             }
         }
         sc.close();
-    }
-
-    public static void main(String[] args) throws Exception {
-
-        Bai2TongHaiSo t = new Bai2TongHaiSo();
-        t.input();
-        t.display();
-        t.tongGanNhat();
     }
 }
