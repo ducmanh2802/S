@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class JavaCore {
+class JavaCore {
     public static void main(String[] args) {
         // 1.Hãy nói ra sự khác biệt giữa JDK và JRE?
         /*

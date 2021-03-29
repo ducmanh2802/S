@@ -13,13 +13,19 @@ public class Bai1ArrayList {
         String input = sc.next();
         ArrayList<String> list = new ArrayList<>();
         while (!input.toLowerCase().equals("q")) {
-            list.add(input);
-            System.out.println("Nhập giá trị vào: ");
+            try {
+                int num = Integer.parseInt(input);
+                list.add(input);
+                System.out.println("Nhập giá trị vào: ");
+            } catch (Exception e) {
+                System.out.println("Giá trị nhập vào không phải là số! Vui lòng nhập lại");
+            }
             input = sc.next();
         }
         if (input.toLowerCase().equals("q")) {
             Collections.sort(list);
             for (String element : list) {
+                System.out.println("Các giá trị vừa nhập đưuọc sắp xếp là:");
                 System.out.println(element);
             }
         }

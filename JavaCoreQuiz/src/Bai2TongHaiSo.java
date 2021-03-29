@@ -25,11 +25,17 @@ public class Bai2TongHaiSo {
                 n = sc.nextInt();
             }
             for (int i = 0; i < n; i++) {
-                arr.add((int) (Math.random() * 20 - 10));
+                arr.add((int) (Math.random() * 21 - 10));
             }
 
         } catch (Exception e) {
             System.out.println("Giá trị nhập vào không hợp lệ!");
+        }
+    }
+    public void display(){
+        System.out.println("Mảng các phần tử:");
+        for (int i = 0; i < arr.size(); i++) {
+            System.out.println(arr.get(i));
         }
     }
 
@@ -39,7 +45,7 @@ public class Bai2TongHaiSo {
         int minSum = Math.abs(arr.get(0) + arr.get(1) - x);
         for (int i = 0; i < arr.size(); i++) {
             for (int j = i + 1; j < arr.size(); j++) {
-                if ((Math.abs(arr.get(i) + arr.get(j) - x)) < minSum) {
+                if ((Math.abs(arr.get(i) + arr.get(j) - x)) < minSum && (Math.abs(arr.get(i) + arr.get(j) - x) != 0)) {
                     minSum = Math.abs(arr.get(i) + arr.get(j) - x);
                 }
             }
@@ -59,6 +65,7 @@ public class Bai2TongHaiSo {
 
         Bai2TongHaiSo t = new Bai2TongHaiSo();
         t.input();
+        t.display();
         t.tongGanNhat();
     }
 }
