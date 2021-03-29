@@ -72,7 +72,7 @@ public class Bai2TongHaiSo {
         for (int i = 0; i < arr.size(); i++) {
             for (int j = i + 1; j < arr.size(); j++) {
                 if ((Math.abs(arr.get(i) + arr.get(j) - x)) == minSum) {
-                    System.out.println("Tổng 2 số gần " + x + " nhất tại vị trí " + i + " " + j + " là: " + arr.get(i)
+                    System.out.println("Hai số có tổng gần " + x + " nhất tại vị trí " + i + " " + j + " là: " + arr.get(i)
                             + " " + arr.get(j));
                 }
             }
